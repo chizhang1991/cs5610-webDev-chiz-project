@@ -1,1 +1,2 @@
-# cs5610-webDev-chiz-project
+# CS5610 Web Dev Project
+# Chi Zhang
