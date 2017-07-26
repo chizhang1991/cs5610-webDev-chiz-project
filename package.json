@@ -1,0 +1,22 @@
+{
+  "name": "cs5610-project",
+  "version": "1.0.0",
+  "description": "project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chizhang1991/cs5610-webDev-chiz-project.git"
+  },
+  "author": "Chi Zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chizhang1991/cs5610-webDev-chiz-project/issues"
+  },
+  "homepage": "https://github.com/chizhang1991/cs5610-webDev-chiz-project#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
