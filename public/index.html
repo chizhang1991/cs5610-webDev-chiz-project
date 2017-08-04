@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="JobHunter">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="GeeksLabs">
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-    <link rel="shortcut icon" href="img/icons/favicon.png">
+    <!--<meta charset="utf-8">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta charset="utf-8" name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--<meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">-->
+    <!--<meta name="author" content="GeeksLabs">-->
+    <!--<meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">-->
+    <!--<link rel="shortcut icon" href="img/icons/favicon.png">-->
 
     <title>Job Hunter</title>
 
     <!--angular --CHI-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
 
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -23,13 +27,13 @@
     <link href="css/elegant-icons-style.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <!-- full calendar css-->
-    <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
-    <link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <!--<link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />-->
+    <!--<link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />-->
     <!-- easy pie chart-->
-    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+    <!--<link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>-->
     <!-- owl carousel -->
-    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-    <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="css/owl.carousel.css" type="text/css">-->
+    <!--<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet">-->
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/fullcalendar.css">
     <link href="css/widgets.css" rel="stylesheet">
@@ -44,13 +48,17 @@
 
     <!--controllers-->
     <script src="views/admin/admin.controller.client.js"></script>
+    <script src="views/courses/course.controller.client.js"></script>
+    <script src="views/homepage/home.controller.client.js"></script>
+    <script src="views/jobs/job.controller.client.js"></script>
+    <script src="views/user/user.controller.client.js"></script>
 
-    <!-- =======================================================
-        Theme Name: NiceAdmin
-        Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-        Author: BootstrapMade
-        Author URL: https://bootstrapmade.com
-    ======================================================= -->
+    <!--service-->
+    <script src="service/user.service.client.js"></script>
+    <script src="service/course.service.client.js"></script>
+    <script src="service/job.service.client.js"></script>
+    <script src="service/home.service.client.js"></script>
+
 </head>
 
 <body>
