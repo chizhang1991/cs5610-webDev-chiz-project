@@ -26,10 +26,10 @@
             .when("/profile", {
                 templateUrl: "./views/user/profile.view.client.html",
                 controller: "ProfileController",
-                controllerAs: "model"
-                // resolve: {
-                //     loggedin: checkLoggedin
-                // }
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkLoggedin
+                }
             })
             .when("/register", {
                 templateUrl: "./views/user/register.view.client.html",
