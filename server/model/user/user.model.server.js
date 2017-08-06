@@ -12,7 +12,9 @@ module.exports = function(mongoose){
         // 'addWebsiteForUser' : addWebsiteForUser,
         'deleteUser' : deleteUser,
         'findAllUser' : findAllUser,
-        'findUserByGoogleId' : findUserByGoogleId
+        'findUserByGoogleId' : findUserByGoogleId,
+        'removeCourseFromUser' : removeCourseFromUser,
+        'addCourseForUser' : addCourseForUser
     };
 
     return api;
@@ -88,5 +90,14 @@ module.exports = function(mongoose){
 
     function findUserByGoogleId(googleId) {
         return userModel.findOne({'google.id' : googleId});
+    }
+
+    // course functions
+    function removeCourseFromUser(userId, courseId) {
+
+    }
+
+    function addCourseForUser(userId, courseId) {
+
     }
 };

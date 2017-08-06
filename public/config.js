@@ -23,6 +23,11 @@
                 controller: "LoginController",
                 controllerAs: "model"
             })
+            .when("/register", {
+                templateUrl: "./views/user/register.view.client.html",
+                controller: "RegisterController",
+                controllerAs: "model"
+            })
             .when("/profile", {
                 templateUrl: "./views/user/profile.view.client.html",
                 controller: "ProfileController",
@@ -31,10 +36,53 @@
                     loggedin: checkLoggedin
                 }
             })
-            .when("/register", {
-                templateUrl: "./views/user/register.view.client.html",
-                controller: "RegisterController",
-                controllerAs: "model"
+            .when('/job', {
+                templateUrl : "views/jobs/job-list.view.client.html",
+                controller: "JobListController",
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkLoggedin
+                }
+            })
+            .when('/job/new', {
+                templateUrl : "views/jobs/job-new.view.client.html",
+                controller: "NewJobController",
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkLoggedin
+                }
+            })
+            .when('/job/:jid', {
+                templateUrl : "views/jobs/job-edit.view.client.html",
+                controller: "EditJobController",
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkLoggedin
+                }
+            })
+            .when('/course', {
+                templateUrl : "views/courses/course-list.view.client.html",
+                controller: "CourseListController",
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkLoggedin
+                }
+            })
+            .when('/course/new', {
+                templateUrl : "views/courses/course-new.view.client.html",
+                controller: "NewCourseController",
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkLoggedin
+                }
+            })
+            .when('/course/:wid', {
+                templateUrl : "views/courses/course-edit.view.client.html",
+                controller: "EditCourseController",
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkLoggedin
+                }
             })
 
             .otherwise({

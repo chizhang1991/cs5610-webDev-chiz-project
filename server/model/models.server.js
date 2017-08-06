@@ -15,15 +15,13 @@ module.exports = function(mongoose) {
     mongoose.Promise = require('q').Promise;
 
     var userModel = require("./user/user.model.server.js")(mongoose);
-    // var websiteModel = require("./website/website.models.server.js")(mongoose, userModel);
-    // var pageModel =  require("./page/page.models.server.js")(mongoose, websiteModel);
-    // var widgetModel = require("./widget/widget.models.server.js")(mongoose, pageModel);
+    // var courseModel = require("./courses/course.model.server")(mongoose, userModel);
+    // var jobModel =  require("./jobs/job.model.server")(mongoose, userModel);
 
     var models = {
-        'userModel' : userModel
-        // 'websiteModel' : websiteModel,
-        // 'pageModel' : pageModel,
-        // 'widgetModel' : widgetModel
+        'userModel' : userModel,
+        // 'courseModel' : courseModel,
+        // 'jobModel' : jobModel
     };
 
     return models;

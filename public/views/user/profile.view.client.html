@@ -27,10 +27,8 @@
             <!-- notificatoin dropdown start-->
             <ul class="nav pull-right top-menu">
                 <li>
-                    <i class="icon_profile"></i>
-                </li>
-                <li>
-                    <a data-toggle="dropdown" class="dropdown-toggle">
+                    <a>
+                        <i class="icon_profile"></i>
                         <span class="username">Hello, {{model.user.username}}</span>
                     </a>
                 </li>
@@ -42,7 +40,7 @@
 
     <!--sidebar start-->
     <aside>
-        <div id="sidebar"  class="nav-collapse ">
+        <div id="sidebar"  class="nav-collapse">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu">
                 <li><a>
@@ -80,7 +78,7 @@
 
                 <li><a>
                         <i class="icon_lock_alt"></i>
-                        <span>Logout</span>
+                        <span ng-click="model.logout()">Logout</span>
                         <!--<span class="menu-arrow arrow_carrot-right"></span>-->
                     </a></li>
 
