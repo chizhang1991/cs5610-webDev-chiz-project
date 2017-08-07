@@ -105,17 +105,32 @@
                     Course List
                 </ol>
 
+                <a href="#!/course/new" class="btn btn-primary btn-block">
+                    Add a new course
+                </a>
+                <br/>
+                <div ng-repeat="course in model.courses">
+                    <ol class="breadcrumb">
+                        <i class="icon_menu-circle_alt2"></i>
+                        {{course.name}}
+                    </ol>
+                    <p>{{course.description}}</p>
+                    <h4>Assignment</h4>
+                    <div ng-bind-html="model.trustThisContent(course.assignment)"></div>
+                    <h4>Project</h4>
+                    <div ng-bind-html="model.trustThisContent(course.project)"></div>
+                </div>
 
-                <ul class="list-group borderless">
-                    <li ng-repeat="course in model.courses" class="list-group-item cl-list-item-borderless">
-                        <a href="#!/course/{{course._id}}">
-                            <span class="glyphicon glyphicon-cog pull-right"></span>
-                        </a>
-                        <a href="#!/course/{{course._id}}/page">
-                            {{course.name}}
-                        </a>
-                    </li>
-                </ul>
+                <!--<ul class="list-group borderless">-->
+                    <!--<li ng-repeat="course in model.courses" class="list-group-item cl-list-item-borderless">-->
+                        <!--<a href="#!/course/{{course._id}}">-->
+                            <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
+                        <!--</a>-->
+                        <!--<a>-->
+                            <!--{{course.name}}-->
+                        <!--</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
 
             </div>
             <!-- page end-->

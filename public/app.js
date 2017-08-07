@@ -1,4 +1,4 @@
 (function () {
     angular
-        .module("JobHunter", ["ngRoute"]);
+        .module("JobHunter", ["ngRoute", "textAngular"]);
 })();
