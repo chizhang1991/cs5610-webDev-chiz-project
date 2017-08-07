@@ -97,7 +97,7 @@
                     <h3 class="page-header"><i class="fa fa fa-bars"></i> Profile</h3>
                 </div>
             </div>
-            <div class="container">
+            <div class="container-fluid">
                 <ol class="breadcrumb">
                     <i class="fa fa-thumbs-o-up"></i>
                     Basic Profile
@@ -131,22 +131,59 @@
                            id="lName" required>
                 </form>
 
+                <br/>
+                <br/>
                 <ol class="breadcrumb">
                     <i class="fa fa-thumbs-o-up"></i>
                     About Myself
                 </ol>
 
-                use a textAngular -> HTML
+                <label for="description">Description</label>
+                <text-angular
+                        ta-toolbar="[['h1','h2','h3'],['bold','italics']]">
+                </text-angular>
 
+                <text-angular
+                        ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+                        ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
+                        ['indent','outdent'],['html']]"
+                        ng-model="model.user.description"
+                        type="text"
+                        id="description"
+                        placeholder="Describe yourself"
+                        ta-text-editor-class="form-control myform1-height"
+                        ta-html-editor-class="form-control myform1-height">
+                </text-angular>
+
+                <br/>
+                <br/>
                 <ol class="breadcrumb">
                     <i class="fa fa-thumbs-o-up"></i>
                     Detailed Information
                 </ol>
+                <form class="cl-form-bottom-padding">
+                    <label for="location">Location Preference</label>
+                    <input ng-model="model.user.location"
+                           type="text"
+                           class="form-control"
+                           placeholder="City or area"
+                           id="location">
+                    <label for="job">Job Title</label>
+                    <input ng-model="model.user.job"
+                           type="text"
+                           class="form-control"
+                           placeholder="Job you interested in"
+                           id="job" required>
+                    <label for="salary">Salary</label>
+                    <input ng-model="model.user.salary"
+                           type="number"
+                           class="form-control"
+                           placeholder="Expected salary"
+                           id="salary" required>
+                </form>
 
-                location preference
-                job preference
-                salary preference
-
+                <br/>
+                <br/>
                 <a ng-click="model.updateUser(model.user)" class="btn btn-primary btn-block">
                     Save Change
                 </a>
@@ -154,9 +191,7 @@
                    class="btn btn-danger btn-block">
                     Unregister
                 </a>
-                <!--<a href="#!/home" class="btn btn-primary btn-block">-->
-                <!--Homepage-->
-                <!--</a>-->
+
             </div>
         </section>
     </section>
