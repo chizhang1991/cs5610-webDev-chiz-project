@@ -98,6 +98,10 @@
                 </div>
             </div>
             <div class="container">
+                <ol class="breadcrumb">
+                    <i class="fa fa-thumbs-o-up"></i>
+                    Basic Profile
+                </ol>
                 <div ng-show="model.error" class="alert alert-danger" role="alert">{{model.error}}</div>
                 <div ng-show="model.updated" class="alert alert-success" role="alert">{{model.updated}}</div>
                 <form class="cl-form-bottom-padding">
@@ -127,12 +131,25 @@
                            id="lName" required>
                 </form>
 
+                <ol class="breadcrumb">
+                    <i class="fa fa-thumbs-o-up"></i>
+                    About Myself
+                </ol>
+
+                use a textAngular -> HTML
+
+                <ol class="breadcrumb">
+                    <i class="fa fa-thumbs-o-up"></i>
+                    Detailed Information
+                </ol>
+
+                location preference
+                job preference
+                salary preference
+
                 <a ng-click="model.updateUser(model.user)" class="btn btn-primary btn-block">
                     Save Change
                 </a>
-                <!--<a ng-click="model.logout()" class="btn btn-danger btn-block">-->
-                    <!--Logout-->
-                <!--</a>-->
                 <a ng-click="model.deleteUser(model.user)"
                    class="btn btn-danger btn-block">
                     Unregister

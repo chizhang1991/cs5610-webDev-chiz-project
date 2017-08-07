@@ -6,6 +6,8 @@
     function AdminController(UserService, $timeout, $window, admin) {
         var vm = this;
         vm.user = admin;
+        vm.logout = logout;
+
         vm.deleteUser = deleteUser;
         vm.addAdmin = addAdmin;
         vm.removeAdmin = removeAdmin;
@@ -15,6 +17,14 @@
             .then(function (users) {
                 vm.users = users;
             });
+
+        function logout() {
+            UserService
+                .logout()
+                .then(function () {
+                    $location.url('/login');
+                })
+        }
 
         function deleteUser(user) {
             if (user._id === admin._id) {
