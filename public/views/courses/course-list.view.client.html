@@ -48,17 +48,18 @@
                     <i class="icon_house_alt"></i>
                     <span>Homepage</span>
                 </a></li>
-                <li><a ng-if="model.user.roles.indexOf('ADMIN')>-1">
+                <li><a ng-if="model.user.roles.indexOf('ADMIN')>-1"
+                       href="#!/admin">
                     <i class="icon_group"></i>
-                    <span>User List</span>
+                    <span>Admin Page</span>
                     <!--<span class="menu-arrow arrow_carrot-right"></span>-->
                 </a></li>
-                <li><a>
+                <li><a href="#!/course">
                     <i class="icon_desktop"></i>
                     <span>Course</span>
                     <!--<span class="menu-arrow arrow_carrot-right"></span>-->
                 </a></li>
-                <li><a >
+                <li><a href="#!/job">
                     <i class="icon_genius"></i>
                     <span>Jobs</span>
                 </a></li>
@@ -70,7 +71,7 @@
                 </a></li>
 
                 <li><a href="#!/profile">
-                    <i class=" icon_id"></i>
+                    <i class="icon_id"></i>
                     <span>Profile</span>
 
                 </a></li>
@@ -95,15 +96,28 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="icon_desktop"></i> Courses</h3>
-                    <!--<ol class="breadcrumb">-->
-                    <!--<li><i class="fa fa-home"></i><a href="../index2.html">Home</a></li>-->
-                    <!--<li><i class="fa fa-bars"></i>Pages</li>-->
-                    <!--<li><i class="fa fa-square-o"></i>Pages</li>-->
-                    <!--</ol>-->
                 </div>
             </div>
             <!-- page start-->
-            Page content goes here
+            <div class="container-fluid">
+                <ol class="breadcrumb">
+                    <i class="fa fa-thumbs-o-up"></i>
+                    Course List
+                </ol>
+
+
+                <ul class="list-group borderless">
+                    <li ng-repeat="course in model.courses" class="list-group-item cl-list-item-borderless">
+                        <a href="#!/course/{{course._id}}">
+                            <span class="glyphicon glyphicon-cog pull-right"></span>
+                        </a>
+                        <a href="#!/course/{{course._id}}/page">
+                            {{course.name}}
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
             <!-- page end-->
         </section>
     </section>

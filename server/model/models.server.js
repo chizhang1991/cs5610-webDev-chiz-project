@@ -15,12 +15,12 @@ module.exports = function(mongoose) {
     mongoose.Promise = require('q').Promise;
 
     var userModel = require("./user/user.model.server.js")(mongoose);
-    // var courseModel = require("./courses/course.model.server")(mongoose, userModel);
+    var courseModel = require("./courses/course.model.server.js")(mongoose, userModel);
     // var jobModel =  require("./jobs/job.model.server")(mongoose, userModel);
 
     var models = {
         'userModel' : userModel,
-        // 'courseModel' : courseModel,
+        'courseModel' : courseModel,
         // 'jobModel' : jobModel
     };
 

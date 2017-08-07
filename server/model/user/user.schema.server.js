@@ -16,6 +16,9 @@ module.exports = function(mongoose){
         email : String,
         phone : String,
         description: String,
+        location : String,
+        job: String,
+        salary: Number,
         jobs : [{
             type: Schema.Types.ObjectId,
             ref : 'jobModel'
@@ -28,9 +31,6 @@ module.exports = function(mongoose){
         //     type: Schema.Types.ObjectId,
         //     ref : 'userModel'
         // }],
-        location : String,
-        job: String,
-        salary: Number,
         dateCreated : {
             type : Date,
             default: Date.now

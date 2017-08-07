@@ -5,7 +5,7 @@
         .controller("EditCourseController", EditCourseController)
         .controller("NewCourseController", NewCourseController);
 
-    function CourseListController(loggedin, $location, UserService) {
+    function CourseListController(loggedin, $location, UserService, CourseService) {
         var vm = this;
         vm.uid = loggedin._id;
         vm.user = loggedin;
@@ -17,6 +17,14 @@
                 .then(function () {
                     $location.url('/login');
                 })
+        }
+
+        CourseService
+            .findCoursesByUser(vm.uid)
+            .then(renderCourses);
+
+        function renderCourses(courses) {
+            vm.courses = courses;
         }
     }
 

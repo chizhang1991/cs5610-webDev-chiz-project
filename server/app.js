@@ -6,7 +6,7 @@ module.exports = function(app){
 
     require("./service/user.service.server.js")(app, models);
     // require("./service/job.service.server.js")(app, models);
-    // require("./service/course.service.server")(app, models);
+    require("./service/course.service.server.js")(app, models);
 };
 
 console.log("server side app.js is running");

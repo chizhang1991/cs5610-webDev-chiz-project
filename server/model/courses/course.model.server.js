@@ -7,10 +7,8 @@ module.exports = function(mongoose, userModel) {
         'findAllCoursesForUser': findAllCoursesForUser,
         'findCourseById': findCourseById,
         'updateCourse': updateCourse,
-        // 'removePageFromcourse': removePageFromcourse,
         'deleteCourse': deleteCourse,
-        // 'findAllCourses' : findAllCourse
-        // 'addPageTocourse' : addPageTocourse
+        'findAllCourses' : findAllCourses
     };
 
     return api;
@@ -43,34 +41,35 @@ module.exports = function(mongoose, userModel) {
             _id : courseId
         }, {
             name: course.name,
-            description: course.description
+            description: course.description,
+            assignment: course.assignment,
         });
     }
 
-    function removePageFromCourse(courseId, pageId) {
-        courseModel
-            .findOne({_id: courseId})
-            .then(
-                function(course){
-                    var index = course.pages.indexOf(pageId);
-                    course.pages.splice(index, 1);
-                    // course.pages.pull(pageId);
-                    course.save();
-                },
-                function(error){
-                    console.log(error);
-                }
-            );
-    }
-
-    function addPageToCourse(courseId, pageId) {
-        return courseModel
-            .findOne({_id: courseId})
-            .then(function (course) {
-                course.pages.push(pageId);
-                return course.save();
-            });
-    }
+    // function removePageFromCourse(courseId, pageId) {
+    //     courseModel
+    //         .findOne({_id: courseId})
+    //         .then(
+    //             function(course){
+    //                 var index = course.pages.indexOf(pageId);
+    //                 course.pages.splice(index, 1);
+    //                 // course.pages.pull(pageId);
+    //                 course.save();
+    //             },
+    //             function(error){
+    //                 console.log(error);
+    //             }
+    //         );
+    // }
+    //
+    // function addPageToCourse(courseId, pageId) {
+    //     return courseModel
+    //         .findOne({_id: courseId})
+    //         .then(function (course) {
+    //             course.pages.push(pageId);
+    //             return course.save();
+    //         });
+    // }
 
     function deleteCourse(userId, courseId) {
         return courseModel

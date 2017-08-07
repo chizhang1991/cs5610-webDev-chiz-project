@@ -14,7 +14,9 @@ module.exports = function(mongoose){
         'findAllUser' : findAllUser,
         'findUserByGoogleId' : findUserByGoogleId,
         'removeCourseFromUser' : removeCourseFromUser,
-        'addCourseForUser' : addCourseForUser
+        'addCourseForUser' : addCourseForUser,
+        'removeJobFromUser' : removeJobFromUser,
+        'addJobForUser' : addJobForUser
     };
 
     return api;
@@ -23,7 +25,12 @@ module.exports = function(mongoose){
 
     function createUser(user){
         user.roles = ['USER'];
-        user.websites = [];
+        user.jobs = [];
+        user.courses = [];
+        user.location = null;
+        user.salary = null;
+        user.description = null;
+        user.job = null;
         return userModel.create(user);
     }
 
@@ -50,7 +57,11 @@ module.exports = function(mongoose){
             lastName : user.lastName,
             email : user.email,
             phone : user.phone,
-            roles : user.roles
+            roles : user.roles,
+            salary: user.salary,
+            description: user.description,
+            location: user.location,
+            job: user.job
         });
     }
 
@@ -95,10 +106,51 @@ module.exports = function(mongoose){
 
     // course functions
     function removeCourseFromUser(userId, courseId) {
-
+        userModel
+            .findOne({_id: userId})
+            .then(
+                function(user){
+                    var index = user.websites.indexOf(courseId);
+                    user.courses.splice(index, 1);
+                    return user.save();
+                },
+                function(error){
+                    console.log(error);
+                }
+            );
     }
 
     function addCourseForUser(userId, courseId) {
+        return userModel
+            .findOne({_id: userId})
+            .then(function (user) {
+                user.courses.push(courseId);
+                return user.save();
+            });
+    }
 
+    // job functions
+    function removeJobFromUser(userId, jobId) {
+        userModel
+            .findOne({_id: userId})
+            .then(
+                function(user){
+                    var index = user.websites.indexOf(jobId);
+                    user.jobs.splice(index, 1);
+                    return user.save();
+                },
+                function(error){
+                    console.log(error);
+                }
+            );
+    }
+
+    function addJobForUser(userId, jobId) {
+        return userModel
+            .findOne({_id: userId})
+            .then(function (user) {
+                user.jobs.push(jobId);
+                return user.save();
+            });
     }
 };
