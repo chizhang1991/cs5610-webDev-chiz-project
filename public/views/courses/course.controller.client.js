@@ -5,7 +5,7 @@
         .controller("EditCourseController", EditCourseController)
         .controller("NewCourseController", NewCourseController);
 
-    function CourseListController(loggedin, UserService) {
+    function CourseListController(loggedin, $location, UserService) {
         var vm = this;
         vm.uid = loggedin._id;
         vm.user = loggedin;
@@ -20,7 +20,7 @@
         }
     }
 
-    function EditCourseController(loggedin, UserService) {
+    function EditCourseController(loggedin, $location, UserService) {
         var vm = this;
         vm.uid = loggedin._id;
         vm.user = loggedin;
@@ -35,7 +35,7 @@
         }
     }
 
-    function NewCourseController(loggedin, UserService) {
+    function NewCourseController(loggedin, $location, UserService) {
         var vm = this;
         vm.uid = loggedin._id;
         vm.user = loggedin;

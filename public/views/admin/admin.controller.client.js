@@ -3,7 +3,7 @@
         .module("JobHunter")
         .controller("AdminController", AdminController);
 
-    function AdminController(UserService, $timeout, $window, admin) {
+    function AdminController(UserService, $timeout, $window, $location, admin) {
         var vm = this;
         vm.user = admin;
         vm.logout = logout;
