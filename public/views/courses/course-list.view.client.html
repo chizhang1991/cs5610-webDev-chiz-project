@@ -48,18 +48,17 @@
                     <i class="icon_house_alt"></i>
                     <span>Homepage</span>
                 </a></li>
-                <li><a ng-if="model.user.roles.indexOf('ADMIN')>-1"
-                       href="#!/admin">
+                <li><a ng-if="model.user.roles.indexOf('ADMIN')>-1">
                     <i class="icon_group"></i>
-                    <span>Admin Page</span>
+                    <span>User List</span>
                     <!--<span class="menu-arrow arrow_carrot-right"></span>-->
                 </a></li>
-                <li><a href="#!/course">
+                <li><a>
                     <i class="icon_desktop"></i>
                     <span>Course</span>
                     <!--<span class="menu-arrow arrow_carrot-right"></span>-->
                 </a></li>
-                <li><a href="#!/job">
+                <li><a >
                     <i class="icon_genius"></i>
                     <span>Jobs</span>
                 </a></li>
@@ -71,7 +70,7 @@
                 </a></li>
 
                 <li><a href="#!/profile">
-                    <i class="icon_id"></i>
+                    <i class=" icon_id"></i>
                     <span>Profile</span>
 
                 </a></li>
@@ -95,53 +94,16 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa fa-bars"></i> Admin Page</h3>
+                    <h3 class="page-header"><i class="icon_desktop"></i> Courses</h3>
+                    <!--<ol class="breadcrumb">-->
+                    <!--<li><i class="fa fa-home"></i><a href="../index2.html">Home</a></li>-->
+                    <!--<li><i class="fa fa-bars"></i>Pages</li>-->
+                    <!--<li><i class="fa fa-square-o"></i>Pages</li>-->
+                    <!--</ol>-->
                 </div>
             </div>
-
             <!-- page start-->
-            <div class="container-fluid">
-                <div ng-show="model.error" class="alert alert-danger" role="alert">{{model.error}}</div>
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <!--<th>#</th>-->
-                        <th>Username</th>
-                        <th>Fullname</th>
-                        <th>Google User</th>
-                        <th>Roles</th>
-                        <th>Remove Admin</th>
-                        <th>Add Admin</th>
-                        <th>Delete</th>
-                    </tr>
-                    </thead>
-                    <tbody ng-repeat="user in model.users">
-                    <tr>
-                        <td>{{user.username}}</td>
-                        <td>{{user.firstName}} {{user.lastName}}</td>
-                        <td>Google to be edit</td>
-                        <td>{{user.roles}}</td>
-                        <td><i ng-click="model.removeAdmin(user)" class="icon_close"></i></td>
-                        <td><i ng-click="model.addAdmin(user)" class="icon_check"></i></td>
-                        <td><i ng-click="model.deleteUser(user)" class="icon_error-triangle_alt"></i></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!--<div class="container-fluid">-->
-
-                <!--<ul class="list-group borderless">-->
-                    <!--<li ng-repeat="user in model.users" class="list-group-item cl-list-item-borderless">-->
-                        <!--<a ng-click="model.deleteUser(user)">-->
-                            <!--<span class="glyphicon glyphicon-remove pull-right"></span>-->
-                        <!--</a>-->
-                        <!--<a>-->
-                            <!--{{user.username}} : {{user.firstName}} {{user.lastName}}-->
-                        <!--</a>-->
-                    <!--</li>-->
-                <!--</ul>-->
-            <!--</div>-->
+            Page content goes here
             <!-- page end-->
         </section>
     </section>

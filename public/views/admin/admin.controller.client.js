@@ -3,15 +3,72 @@
         .module("JobHunter")
         .controller("AdminController", AdminController);
 
-    function AdminController($timeout) {
-        console.log("clicked");
-        // $scope.toggleLeft = buildToggler('left');
-        // $scope.toggleRight = buildToggler('right');
+    function AdminController(UserService, $timeout, $window, admin) {
+        var vm = this;
+        vm.user = admin;
+        vm.deleteUser = deleteUser;
+        vm.addAdmin = addAdmin;
+        vm.removeAdmin = removeAdmin;
 
-        // function buildToggler(componentId) {
-        //     return function() {
-        //         $mdSidenav(componentId).toggle();
-        //     };
-        // }
+        UserService
+            .findAllUsers()
+            .then(function (users) {
+                vm.users = users;
+            });
+
+        function deleteUser(user) {
+            if (user._id === admin._id) {
+                vm.error = "You cannot delete yourself!";
+                $timeout(function () {
+                    vm.updated = null;
+                }, 3000);
+            } else {
+                UserService
+                    .deleteUser(user._id)
+                    .then(function () {
+                        $window.location.reload();
+                    }, function () {
+                        vm.error = "Unable to remove this user.";
+                        $timeout(function () {
+                            vm.error = null;
+                        }, 3000);
+                    });
+            }
+        }
+
+        function addAdmin(user) {
+            user.roles = ['USER', 'ADMIN'];
+            UserService
+                .updateUser(user._id, user)
+                .then(function () {
+                    $window.location.reload();
+                }, function () {
+                    vm.error = "Fail when add this user as admin.";
+                    $timeout(function () {
+                        vm.error = null;
+                    }, 3000);
+                });
+        }
+
+        function removeAdmin(user) {
+            if (user._id === admin._id) {
+                vm.error = "You cannot change roles of yourself!";
+                $timeout(function () {
+                    vm.updated = null;
+                }, 3000);
+            } else {
+                user.roles = ['USER'];
+                UserService
+                    .updateUser(user._id, user)
+                    .then(function () {
+                        $window.location.reload();
+                    }, function () {
+                        vm.error = "Fail when add this user as admin.";
+                        $timeout(function () {
+                            vm.error = null;
+                        }, 3000);
+                    });
+            }
+        }
     }
 })();

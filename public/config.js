@@ -9,14 +9,13 @@
             .when("/", {
                 templateUrl : "./home.html"
             })
-
-            .when("/homepage", {
-                templateUrl : "./views/homepage/home.view.client.html"
-            })
             .when("/admin", {
                 templateUrl: "./views/admin/admin.view.client.html",
                 controller: "AdminController",
-                controllerAs: "model"
+                controllerAs: "model",
+                resolve: {
+                    admin: checkAdmin
+                }
             })
             .when("/login", {
                 templateUrl: "./views/user/login.view.client.html",
@@ -34,6 +33,15 @@
                 controllerAs: "model",
                 resolve: {
                     loggedin: checkLoggedin
+                }
+            })
+            .when("/homepage", {
+                templateUrl : "./views/homepage/home.view.client.html",
+                controller: "HomeController",
+                controllerAs: "model",
+                resolve: {
+                    loggedin: checkLoggedin
+                    // currentUser: checkCurrentUser
                 }
             })
             .when('/job', {
@@ -137,7 +145,8 @@
                         deferred.resolve(user);
                     }
                 } else {
-                    $location.url('/home');
+                    // console.log("come to else branch");
+                    $location.url('/homepage');
                 }
 
             });

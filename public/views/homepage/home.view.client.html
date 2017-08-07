@@ -2,6 +2,7 @@
 <section id="container" class="">
 
 
+    <!--header start-->
     <header class="header dark-bg">
         <div class="toggle-nav">
             <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom">
@@ -28,9 +29,10 @@
         <div class="top-nav notification-row">
             <!-- notificatoin dropdown start-->
             <ul class="nav pull-right top-menu">
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="username">Username</span>
+                <li>
+                    <a>
+                        <i class="icon_profile"></i>
+                        <span class="username">Hello, {{model.user.username}}</span>
                     </a>
                 </li>
                 <!-- user login dropdown end -->
@@ -38,66 +40,49 @@
             <!-- notificatoin dropdown end-->
         </div>
     </header>
-    <!--header end-->
 
     <!--sidebar start-->
     <aside>
-        <div id="sidebar"  class="nav-collapse ">
+        <div id="sidebar"  class="nav-collapse">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu">
-                <li class="">
-                    <a class="" href="#">
-                        <i class="icon_house_alt"></i>
-                        <span>Homepage</span>
-                    </a>
-                </li>
-                <li class="">
-                    <a href="javascript:;" class="">
-                        <i class="icon_group"></i>
-                        <span>User List</span>
-                        <!--<span class="menu-arrow arrow_carrot-right"></span>-->
-                    </a>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;" class="">
-                        <i class="icon_desktop"></i>
-                        <span>Course</span>
-                        <!--<span class="menu-arrow arrow_carrot-right"></span>-->
-                    </a>
-                </li>
-                <li>
-                    <a class="" href="widgets.html">
-                        <i class="icon_genius"></i>
-                        <span>Jobs</span>
-                    </a>
-                </li>
+                <li><a href="#!/homepage">
+                    <i class="icon_house_alt"></i>
+                    <span href="">Homepage</span>
+                </a></li>
+                <li><a ng-if="model.user.roles.indexOf('ADMIN')>-1"
+                       href="#!/admin">
+                    <i class="icon_group"></i>
+                    <span>Admin Page</span>
+                    <!--<span class="menu-arrow arrow_carrot-right"></span>-->
+                </a></li>
+                <li><a href="#!/course">
+                    <i class="icon_desktop"></i>
+                    <span>Course</span>
+                    <!--<span class="menu-arrow arrow_carrot-right"></span>-->
+                </a></li>
+                <li><a >
+                    <i class="icon_genius"></i>
+                    <span>Jobs</span>
+                </a></li>
 
-                <li class="sub-menu">
-                    <a href="javascript:;" class="">
-                        <i class="icon_contacts"></i>
-                        <span>Friends</span>
-                        <!--<span class="menu-arrow arrow_carrot-right"></span>-->
-                    </a>
-                </li>
+                <li><a>
+                    <i class="icon_contacts"></i>
+                    <span>Friends</span>
+                    <!--<span class="menu-arrow arrow_carrot-right"></span>-->
+                </a></li>
 
-                <li>
-                    <a class="" href="chart-chartjs.html">
-                        <i class="icon_profile"></i>
-                        <span>Profile</span>
+                <li><a href="#!/profile">
+                    <i class=" icon_id"></i>
+                    <span>Profile</span>
 
-                    </a>
+                </a></li>
 
-                </li>
-
-
-
-                <li class="sub-menu ">
-                    <a href="javascript:;" class="">
-                        <i class="icon_lock_alt"></i>
-                        <span>Logout</span>
-                        <!--<span class="menu-arrow arrow_carrot-right"></span>-->
-                    </a>
-                </li>
+                <li><a>
+                    <i class="icon_lock_alt"></i>
+                    <span ng-click="model.logout()">Logout</span>
+                    <!--<span class="menu-arrow arrow_carrot-right"></span>-->
+                </a></li>
 
             </ul>
             <!-- sidebar menu end-->
@@ -111,13 +96,17 @@
             <!--overview start-->
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
+                    <h3 class="page-header"><i class="fa fa-laptop"></i> Homepage</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="#">Home</a></li>
-                        <li><i class="fa fa-laptop"></i>Dashboard</li>
+                        <li>
+                            <i class="fa fa-thumbs-o-up"></i>
+                            Course List
+                        </li>
+                        <!--<li><i class="fa fa-laptop"></i>Dashboard</li>-->
                     </ol>
                 </div>
             </div>
+
 
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">

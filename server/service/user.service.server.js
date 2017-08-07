@@ -19,6 +19,7 @@ module.exports = function(app, models){
     app.put('/api/user/:uid', updateUser);
     app.delete('/api/user/:uid', deleteUser);
     app.get('/api/alluser', findAllUsers);
+    // app.put('/api/user/:uid/admin', addAdmin);
 
     /*Config Passport*/
     app.post('/api/login', passport.authenticate('LocalStrategy'), login);
@@ -277,4 +278,20 @@ module.exports = function(app, models){
         }
 
     }
+
+    // function addAdmin(req, res) {
+    //     var uid = req.params.uid;
+    //     if(uid) {
+    //         model
+    //             .addAdmin(uid)
+    //             .then(
+    //                 function (user){
+    //                     res.json(user)
+    //                 },
+    //                 function (error){
+    //                     res.sendStatus(400).send(error);
+    //                 }
+    //             )
+    //     }
+    // }
 };

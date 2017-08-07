@@ -7,6 +7,7 @@ module.exports = function(mongoose){
         _user: {type: mongoose.Schema.Types.ObjectId, ref: "userModel"},
         name: String,
         description: String,
+        keyword: String,
         pages : [{
             type: Schema.Types.ObjectId,
             ref : 'pageModel'

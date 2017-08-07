@@ -43,13 +43,14 @@
         <div id="sidebar"  class="nav-collapse">
             <!-- sidebar menu start-->
             <ul class="sidebar-menu">
-                <li><a>
+                <li><a href="#!/homepage">
                         <i class="icon_house_alt"></i>
                         <span>Homepage</span>
                     </a></li>
-                <li><a>
+                <li><a ng-if="model.user.roles.indexOf('ADMIN')>-1"
+                       href="#!/admin">
                         <i class="icon_group"></i>
-                        <span>User List</span>
+                        <span>Admin Page</span>
                         <!--<span class="menu-arrow arrow_carrot-right"></span>-->
                     </a></li>
                 <li><a>
@@ -68,7 +69,7 @@
                         <!--<span class="menu-arrow arrow_carrot-right"></span>-->
                     </a></li>
 
-                <li><a class="">
+                <li><a href="#!/profile">
                         <i class=" icon_id"></i>
                         <span>Profile</span>
 
@@ -129,9 +130,9 @@
                 <a ng-click="model.updateUser(model.user)" class="btn btn-primary btn-block">
                     Save Change
                 </a>
-                <a ng-click="model.logout()" class="btn btn-danger btn-block">
-                    Logout
-                </a>
+                <!--<a ng-click="model.logout()" class="btn btn-danger btn-block">-->
+                    <!--Logout-->
+                <!--</a>-->
                 <a ng-click="model.deleteUser(model.user)"
                    class="btn btn-danger btn-block">
                     Unregister

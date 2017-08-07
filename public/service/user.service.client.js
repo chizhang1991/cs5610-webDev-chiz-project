@@ -5,7 +5,6 @@
 
     function UserService($http) {
         var services = {
-            // "createUser": createUser,
             "findUserById": findUserById,
             "findUserByUsername": findUserByUsername,
             "findUserByCredentials": findUserByCredentials,
@@ -16,7 +15,7 @@
             "login":login,
             "logout" : logout,
             "register" : register
-            // "checkLoggedIn" : checkLoggedIn
+            // "addAdmin" : addAdmin
         };
         return services;
 
@@ -53,23 +52,13 @@
         function setCurrentUser(user) {
             $rootScope.currentUser = user;
         }
-        //
 
-        // function createUser(user) {
-        //     var url = "/api/user";
-        //     return $http.post(url, user)
-        //         .then(function (response) {
-        //             return response.data;
-        //         });
-        //
-        // }
 
         function findUserById(userId) {
             var url = "/api/user/" + userId;
             return $http.get(url)
                 .then(function (response) {
-                    var user = response.data;
-                    return user;
+                    return response.data;
                 });
         }
 
@@ -104,7 +93,6 @@
                 .then(function (response) {
                     return response.data;
                 });
-            // return $http.put(url, user);
         }
 
         function deleteUser(userId) {
@@ -114,5 +102,13 @@
                     return response.data;
                 });
         }
+
+        // function addAdmin(userId) {
+        //     var url = "/api/user/" + userId + "/admin";
+        //     return $http.put(url)
+        //         .then(function (response) {
+        //             return response.data;
+        //         })
+        // }
     }
 })();
