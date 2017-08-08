@@ -47,15 +47,12 @@ module.exports = function(app, models){
     }
 
     function findAllJobsForUser(req, res) {
-        console.log("find all jobs for user into service");
         var uid = req.params.uid;
-        // console.log("in service: " + uid);
 
         model
             .findAllJobsForUser(uid)
             .then(
                 function (jobs) {
-                    console.log("service: jobs" + jobs);
                     if(jobs) {
                         res.json(jobs);
                     } else {

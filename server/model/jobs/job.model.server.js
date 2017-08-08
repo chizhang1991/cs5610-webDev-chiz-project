@@ -14,7 +14,6 @@ module.exports = function(mongoose, userModel) {
     return api;
 
     function createJobForUser(userId, job) {
-        // console.log(job);
         job._user = userId;
         return jobModel
             .create(job)
@@ -26,13 +25,10 @@ module.exports = function(mongoose, userModel) {
     }
 
     function findAllJobsForUser(userId) {
-        // console.log("job model");
         return jobModel
             .find({_user: userId})
             .populate('_user')
             .exec();
-        // console.log("jobs:" + jobs);
-        // return jobs;
     }
 
     function findJobById(jobId) {
@@ -48,11 +44,6 @@ module.exports = function(mongoose, userModel) {
             title: job.title,
             company: job.company,
             location: job.location
-            // assignment: job.assignment,
-            // project: job.project,
-            // number: job.number,
-            // keyword: job.keyword
-            //change
         });
     }
 

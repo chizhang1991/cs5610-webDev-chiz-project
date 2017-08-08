@@ -9,10 +9,6 @@ module.exports = function(mongoose){
         number: String,
         description: String,
         keyword: String,
-        // pages : [{
-        //     type: Schema.Types.ObjectId,
-        //     ref : 'pageModel'
-        // }],
         assignment: String,
         project: String,
 

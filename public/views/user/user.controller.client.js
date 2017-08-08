@@ -14,7 +14,7 @@
             // .findUserByCredentials(username, password)
                 .login(username, password)
                 .then(function (user) {
-                        $location.url("/profile");
+                        $location.url("/homepage");
                     },
                     function (error) {
                         vm.error = "Username does not exist.";

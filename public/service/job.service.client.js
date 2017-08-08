@@ -27,7 +27,6 @@
         }
 
         function findJobsByUser(userId) {
-            console.log("in service");
             var url = "/api/user/" + userId + "/job";
             return $http.get(url)
                 .then(

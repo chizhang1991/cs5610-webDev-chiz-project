@@ -3,7 +3,7 @@ module.exports = function(mongoose){
     var Schema = mongoose.Schema;
 
     var jobSchema = new Schema({
-        _user : {type : Schema.Types.ObjectId, ref : 'User'},
+        _user : {type : Schema.Types.ObjectId, ref : 'userModel'},
         company : {type : String, required : true},
         description : String,
         url: String,
