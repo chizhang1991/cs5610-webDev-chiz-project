@@ -84,7 +84,7 @@
                     loggedin: checkLoggedin
                 }
             })
-            .when('/course/:wid', {
+            .when('/course/:cid', {
                 templateUrl : "views/courses/course-edit.view.client.html",
                 controller: "EditCourseController",
                 controllerAs: "model",

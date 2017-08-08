@@ -110,7 +110,10 @@
                 </a>
                 <br/>
                 <div ng-repeat="course in model.courses">
-                    <ol class="breadcrumb">
+                    <ol class="breadcrumb" href="#!/">
+                        <a href="#!/course/{{course._id}}">
+                            <span class="glyphicon glyphicon-cog pull-right"></span>
+                        </a>
                         <i class="icon_menu-circle_alt2"></i>
                         {{course.name}}
                     </ol>
