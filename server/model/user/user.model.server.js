@@ -110,7 +110,7 @@ module.exports = function(mongoose){
             .findOne({_id: userId})
             .then(
                 function(user){
-                    var index = user.websites.indexOf(courseId);
+                    var index = user.courses.indexOf(courseId);
                     user.courses.splice(index, 1);
                     return user.save();
                 },
@@ -135,7 +135,7 @@ module.exports = function(mongoose){
             .findOne({_id: userId})
             .then(
                 function(user){
-                    var index = user.websites.indexOf(jobId);
+                    var index = user.jobs.indexOf(jobId);
                     user.jobs.splice(index, 1);
                     return user.save();
                 },

@@ -16,12 +16,12 @@ module.exports = function(mongoose) {
 
     var userModel = require("./user/user.model.server.js")(mongoose);
     var courseModel = require("./courses/course.model.server.js")(mongoose, userModel);
-    // var jobModel =  require("./jobs/job.model.server")(mongoose, userModel);
+    var jobModel =  require("./jobs/job.model.server.js")(mongoose, userModel);
 
     var models = {
         'userModel' : userModel,
         'courseModel' : courseModel,
-        // 'jobModel' : jobModel
+        'jobModel' : jobModel
     };
 
     return models;

@@ -95,18 +95,18 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="icon_desktop"></i> Courses</h3>
+                    <h3 class="page-header"><i class="icon_genius"></i> Jobs</h3>
                 </div>
             </div>
             <!-- page start-->
             <div class="container-fluid">
                 <ol class="breadcrumb">
                     <i class="fa fa-thumbs-o-up"></i>
-                    Course List
+                    Job List
                 </ol>
 
-                <a href="#!/course/new" class="btn btn-primary btn-block">
-                    Add a new course
+                <a href="#!/job/new" class="btn btn-primary btn-block">
+                    Add a new job
                 </a>
                 <br/>
                 <div ng-repeat="course in model.courses">
@@ -123,17 +123,6 @@
                     <h4>Project</h4>
                     <div ng-bind-html="model.trustThisContent(course.project)"></div>
                 </div>
-
-                <!--<ul class="list-group borderless">-->
-                    <!--<li ng-repeat="course in model.courses" class="list-group-item cl-list-item-borderless">-->
-                        <!--<a href="#!/course/{{course._id}}">-->
-                            <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
-                        <!--</a>-->
-                        <!--<a>-->
-                            <!--{{course.name}}-->
-                        <!--</a>-->
-                    <!--</li>-->
-                <!--</ul>-->
 
             </div>
             <!-- page end-->

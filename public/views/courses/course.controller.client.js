@@ -65,7 +65,8 @@
 
         function updateCourse(newCourse) {
             // console.log("in service: do update Course");
-            CourseService.updateCourse(vm.cid, newCourse)
+            CourseService
+                .updateCourse(vm.cid, newCourse)
                 .then(function () {
                     vm.updated = "Course changes saved!";
                     $timeout(function () {

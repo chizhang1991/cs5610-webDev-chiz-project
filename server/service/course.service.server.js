@@ -54,7 +54,6 @@ module.exports = function(app, models){
             .findAllCoursesForUser(uid)
             .then(
                 function (courses) {
-                    // console.log("in service: " + websites);
                     if(courses) {
                         res.json(courses);
                     } else {
@@ -97,7 +96,7 @@ module.exports = function(app, models){
         var course = req.body;
 
         model
-            .updateCourse(wid, course)
+            .updateCourse(cid, course)
             .then(
                 function (course){
                     res.json(course)
