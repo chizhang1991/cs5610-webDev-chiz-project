@@ -26,7 +26,7 @@ module.exports = function(mongoose, userModel) {
     }
 
     function findAllCoursesForUser(userId) {
-        return courses = courseModel
+        return courseModel
             .find({_user: userId})
             .populate('_user')
             .exec();

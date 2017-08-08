@@ -4,12 +4,11 @@ module.exports = function(mongoose){
 
     var jobSchema = new Schema({
         _user : {type : Schema.Types.ObjectId, ref : 'User'},
-        name : {type : String, required : true},
+        company : {type : String, required : true},
         description : String,
-        // pages : [{
-        //     type : Schema.Types.ObjectId,
-        //     ref : 'Page'
-        // }],
+        url: String,
+        title: String,
+        location: String,
         dateCreated : {
             type : Date,
             default: Date.now

@@ -10,8 +10,8 @@
             'findCoursesByUser': findCoursesByUser,
             'findCourseById': findCourseById,
             'updateCourse': updateCourse,
-            'deleteCourse': deleteCourse,
-            'deleteCoursesByUser': deleteCoursesByUser
+            'deleteCourse': deleteCourse
+            // 'deleteCoursesByUser': deleteCoursesByUser
         };
         return services;
 
@@ -58,14 +58,14 @@
                     return response.data;
                 });
         }
-
-        function deleteCoursesByUser(userId) {
-            for (c in courses) {
-                course = courses[c];
-                if (course.developerId === userId) {
-                    deletecourse(course._id);
-                }
-            }
-        }
+        //
+        // function deleteCoursesByUser(userId) {
+        //     for (c in courses) {
+        //         course = courses[c];
+        //         if (course.developerId === userId) {
+        //             deletecourse(course._id);
+        //         }
+        //     }
+        // }
     }
 })();

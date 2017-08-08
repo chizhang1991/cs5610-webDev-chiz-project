@@ -21,15 +21,18 @@ module.exports = function(mongoose, userModel) {
             .then(
                 function (job) {
                     return userModel
-                        .addjobForUser(userId, job._id)
+                        .addJobForUser(userId, job._id)
                 });
     }
 
     function findAllJobsForUser(userId) {
-        return jobs = jobModel
+        // console.log("job model");
+        return jobModel
             .find({_user: userId})
             .populate('_user')
             .exec();
+        // console.log("jobs:" + jobs);
+        // return jobs;
     }
 
     function findJobById(jobId) {
@@ -40,8 +43,11 @@ module.exports = function(mongoose, userModel) {
         return jobModel.update({
             _id : jobId
         }, {
-            // name: job.name,
-            // description: job.description,
+            description: job.description,
+            url: job.url,
+            title: job.title,
+            company: job.company,
+            location: job.location
             // assignment: job.assignment,
             // project: job.project,
             // number: job.number,

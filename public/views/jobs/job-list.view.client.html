@@ -109,19 +109,20 @@
                     Add a new job
                 </a>
                 <br/>
-                <div ng-repeat="course in model.courses">
+                <div ng-repeat="job in model.jobs">
                     <ol class="breadcrumb" href="#!/">
-                        <a href="#!/course/{{course._id}}">
+                        <a href="#!/job/{{job._id}}">
                             <span class="glyphicon glyphicon-cog pull-right"></span>
                         </a>
                         <i class="icon_menu-circle_alt2"></i>
-                        {{course.number}} {{course.name}}
+                        {{job.title}} {{job.company}}
                     </ol>
-                    <p>{{course.description}}</p>
-                    <h4>Assignment</h4>
-                    <div ng-bind-html="model.trustThisContent(course.assignment)"></div>
-                    <h4>Project</h4>
-                    <div ng-bind-html="model.trustThisContent(course.project)"></div>
+                    <h4>Job description</h4>
+                    <p>{{job.description}}</p>
+                    <h4>URL</h4>
+                    <p>{{job.url}}</p>
+                    <h4>Location</h4>
+                    <p>{{job.location}}</p>
                 </div>
 
             </div>

@@ -10,7 +10,7 @@
         vm.uid = loggedin._id;
         vm.user = loggedin;
         vm.logout = logout;
-        vm.trustThisContent = trustThisContent;
+        // vm.trustThisContent = trustThisContent;
 
         function logout() {
             UserService
@@ -28,10 +28,10 @@
             vm.jobs = jobs;
         }
 
-        function trustThisContent(html) {
-            // diligence to scrub unsafe content
-            return $sce.trustAsHtml(html);
-        }
+        // function trustThisContent(html) {
+        //     // diligence to scrub unsafe content
+        //     return $sce.trustAsHtml(html);
+        // }
     }
 
     function EditJobController(loggedin, $routeParams, $location, $timeout, UserService, JobService) {
@@ -106,6 +106,7 @@
         }
 
         function createJob(job) {
+            // console.log("find this function");
             JobService
                 .createJob(vm.uid, job)
                 .then(function () {
