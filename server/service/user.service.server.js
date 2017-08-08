@@ -19,7 +19,7 @@ module.exports = function(app, models){
     app.put('/api/user/:uid', updateUser);
     app.delete('/api/user/:uid', deleteUser);
     app.get('/api/alluser', findAllUsers);
-    // app.put('/api/user/:uid/admin', addAdmin);
+    app.post('/api/user', createUser);
 
     /*Config Passport*/
     app.post('/api/login', passport.authenticate('LocalStrategy'), login);
@@ -172,7 +172,8 @@ module.exports = function(app, models){
     function createUser(req, res) {
 
         var user = req.body;
-        user.password = bcrypt.hashSync(user.password);
+        var password = user.password;
+        user.password = bcrypt.hashSync(password);
         // console.log(user);
 
         model

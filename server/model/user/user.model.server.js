@@ -8,8 +8,6 @@ module.exports = function(mongoose){
         'findUserByUsername' : findUserByUsername,
         'findUserByCredentials' : findUserByCredentials,
         'updateUser' : updateUser,
-        // 'removeWebsiteFromUser' : removeWebsiteFromUser,
-        // 'addWebsiteForUser' : addWebsiteForUser,
         'deleteUser' : deleteUser,
         'findAllUser' : findAllUser,
         'findUserByGoogleId' : findUserByGoogleId,

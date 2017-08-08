@@ -14,7 +14,8 @@
             "setCurrentUser":setCurrentUser,
             "login":login,
             "logout" : logout,
-            "register" : register
+            "register" : register,
+            "createUser" : createUser
             // "addAdmin" : addAdmin
         };
         return services;
@@ -43,6 +44,14 @@
 
         function register(user) {
             var url = "api/register";
+            return $http.post(url, user)
+                .then(function (response) {
+                    return response.data;
+                })
+        }
+
+        function createUser(user) {
+            var url = "api/user";
             return $http.post(url, user)
                 .then(function (response) {
                     return response.data;
@@ -103,12 +112,5 @@
                 });
         }
 
-        // function addAdmin(userId) {
-        //     var url = "/api/user/" + userId + "/admin";
-        //     return $http.put(url)
-        //         .then(function (response) {
-        //             return response.data;
-        //         })
-        // }
     }
 })();
