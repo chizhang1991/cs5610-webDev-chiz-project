@@ -43,7 +43,6 @@
         }
 
         function updateCourse(courseId, course) {
-            console.log("do update course");
             var url = "/api/course/" + courseId;
             return $http.put(url, course)
                 .then(function (response) {

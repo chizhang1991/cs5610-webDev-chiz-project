@@ -95,19 +95,52 @@
         <section class="wrapper">
             <!--overview start-->
             <div class="row">
-                <div class="col-lg-12">
+                <div class="container-fluid">
                     <h3 class="page-header"><i class="fa fa-laptop"></i> Homepage</h3>
 
                     <ol class="breadcrumb">
+                        <a href="#!/profile">
+                            <span class="glyphicon glyphicon-triangle-right pull-right"></span>
+                        </a>
                         <i class="fa fa-thumbs-o-up"></i>
                         About Myself
                     </ol>
 
+                    <div ng-bind-html="model.trustThisContent(model.aboutMyself)"></div>
+                </div>
+
+                <div class="container-fluid">
                     <ol class="breadcrumb">
+                        <a href="#!/course">
+                            <span class="glyphicon glyphicon-triangle-right pull-right"></span>
+                        </a>
                         <i class="fa fa-thumbs-o-up"></i>
                         Course List
                     </ol>
 
+                    <div ng-repeat="course in model.courses">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="info-box green-bg">
+                                <i class="fa fa-cubes"></i>
+                                <div class="count">{{course.name}}</div>
+                                <div class="title">{{course.number}}</div>
+                            </div><!--/.info-box-->
+                        </div>
+                    </div>
+                </div>
+                        <!--<ol class="breadcrumb" href="#!/">-->
+                            <!--<a href="#!/course/{{course._id}}">-->
+                                <!--<span class="glyphicon glyphicon-cog pull-right"></span>-->
+                            <!--</a>-->
+                            <!--<i class="icon_menu-circle_alt2"></i>-->
+                            <!--{{course.number}} {{course.name}}-->
+                        <!--</ol>-->
+                        <!--<p>{{course.description}}</p>-->
+                        <!--<h4>Assignment</h4>-->
+                        <!--<div ng-bind-html="model.trustThisContent(course.assignment)"></div>-->
+                        <!--<h4>Project</h4>-->
+                        <!--<div ng-bind-html="model.trustThisContent(course.project)"></div>-->
+                <div class="container-fluid">
 
                     <ol class="breadcrumb">
                         <i class="fa fa-thumbs-o-up"></i>
@@ -118,9 +151,8 @@
                         <i class="fa fa-thumbs-o-up"></i>
                         Job Recommendation
                     </ol>
-
-
                 </div>
+
             </div>
 
 

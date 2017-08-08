@@ -44,7 +44,6 @@
         }
 
         function updateJob(jobId, job) {
-            console.log("do update job");
             var url = "/api/job/" + jobId;
             return $http.put(url, job)
                 .then(function (response) {

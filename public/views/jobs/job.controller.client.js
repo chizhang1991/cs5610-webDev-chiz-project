@@ -64,7 +64,6 @@
             });
 
         function updateJob(newJob) {
-            // console.log("in service: do update Job");
             JobService
                 .updateJob(vm.jid, newJob)
                 .then(function () {
