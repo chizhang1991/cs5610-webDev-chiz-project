@@ -20,6 +20,8 @@ module.exports = function(app, models){
     app.delete('/api/user/:uid', deleteUser);
     app.get('/api/alluser', findAllUsers);
     app.post('/api/user', createUser);
+    // google trends
+    app.get('/api/trend/:uid', getTrend);
 
     /*Config Passport*/
     app.post('/api/login', passport.authenticate('LocalStrategy'), login);
@@ -165,6 +167,38 @@ module.exports = function(app, models){
                     })
                 }
             )
+    }
+
+    // google trends api functions
+    const googleTrends = require('google-trends-api');
+
+    function getTrend(req, res) {
+        var uid = req.params.uid;
+        model
+            .findUserById(uid)
+            .then(
+                function (user) {
+                    if (user) {
+                        // console.log("course in service: " + course._id);
+                        var keyword = user.job;
+                        googleTrends.interestOverTime({keyword: keyword})
+                            .then(function (results) {
+                                console.log('These results are awesome');
+                                res.json(results);
+                            })
+                            .catch(function (err) {
+                                console.error('Oh no there was an error', err);
+                            });
+
+                    } else {
+                        user = null;
+                        res.send(user);
+                    }
+                },
+                function (error) {
+                    res.sendStatus(400).send(error);
+                }
+            );
     }
 
     /*API implementation*/

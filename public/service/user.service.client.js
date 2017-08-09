@@ -15,7 +15,8 @@
             "login":login,
             "logout" : logout,
             "register" : register,
-            "createUser" : createUser
+            "createUser" : createUser,
+            "getTrend" : getTrend
             // "addAdmin" : addAdmin
         };
         return services;
@@ -107,6 +108,14 @@
         function deleteUser(userId) {
             var url = "/api/user/" + userId;
             return $http.delete(url)
+                .then(function (response) {
+                    return response.data;
+                });
+        }
+
+        function getTrend(user) {
+            var url = "/api/trend/" + user._id;
+            return $http.get(url)
                 .then(function (response) {
                     return response.data;
                 });

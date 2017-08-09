@@ -20,17 +20,6 @@ module.exports = function(app, models){
     app.get('/api/trend/:cid', getTrend);
 
     const googleTrends = require('google-trends-api');
-    // googleTrends.interestOverTime({keyword: "Java"})
-    //     .then(function(results){
-    //         console.log('These results are awesome', results);
-    //     })
-    //     .catch(function(err){
-    //         console.error('Oh no there was an error', err);
-    //     });
-    // googleTrends.interestOverTime({keyword: "Java"}, function(err, results){
-    //     if(err) console.error('there was an error!', err);
-    //     else console.log('my sweet sweet results', results);
-    // });
 
     function getTrend(req, res) {
         var cid = req.params.cid;
