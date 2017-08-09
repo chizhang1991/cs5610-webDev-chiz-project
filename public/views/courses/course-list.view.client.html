@@ -118,6 +118,9 @@
                         {{course.number}} {{course.name}}
                     </ol>
                     <p>{{course.description}}</p>
+                    <h4>trends</h4>
+                    <a ng-click="model.getTrend(course)">{{course.keyword}}</a>
+
                     <h4>Assignment</h4>
                     <div ng-bind-html="model.trustThisContent(course.assignment)"></div>
                     <h4>Project</h4>

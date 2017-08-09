@@ -10,7 +10,8 @@
             'findCoursesByUser': findCoursesByUser,
             'findCourseById': findCourseById,
             'updateCourse': updateCourse,
-            'deleteCourse': deleteCourse
+            'deleteCourse': deleteCourse,
+            'getTrend' : getTrend
             // 'deleteCoursesByUser': deleteCoursesByUser
         };
         return services;
@@ -66,5 +67,13 @@
         //         }
         //     }
         // }
+
+        function getTrend(course) {
+            var url = "api/trend/" + course._id;
+            return $http.get(url)
+                .then(function (response) {
+                    return response.data;
+                })
+        }
     }
 })();

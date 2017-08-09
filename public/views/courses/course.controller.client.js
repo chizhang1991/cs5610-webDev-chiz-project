@@ -11,6 +11,7 @@
         vm.user = loggedin;
         vm.logout = logout;
         vm.trustThisContent = trustThisContent;
+        vm.getTrend = getTrend;
 
         function logout() {
             UserService
@@ -22,15 +23,24 @@
 
         CourseService
             .findCoursesByUser(vm.uid)
-            .then(renderCourses);
-
-        function renderCourses(courses) {
-            vm.courses = courses;
-        }
+            .then(function (courses) {
+                vm.courses = courses;
+            });
 
         function trustThisContent(html) {
             // diligence to scrub unsafe content
             return $sce.trustAsHtml(html);
+        }
+
+        function getTrend(course) {
+            console.log("controller " + course._id);
+            CourseService
+                .getTrend(course)
+                .then(function (trend) {
+                    vm.trend = trend;
+                    console.log("trend: " + vm.trend);
+                })
+
         }
     }
 

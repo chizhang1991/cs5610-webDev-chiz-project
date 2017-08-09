@@ -16,6 +16,67 @@ module.exports = function(app, models){
     //DELETE Calls
     app.delete('/api/user/:uid/course/:cid',deleteCourse);
 
+    // google trends
+    app.get('/api/trend/:cid', getTrend);
+
+    const googleTrends = require('google-trends-api');
+    // googleTrends.interestOverTime({keyword: "Java"})
+    //     .then(function(results){
+    //         console.log('These results are awesome', results);
+    //     })
+    //     .catch(function(err){
+    //         console.error('Oh no there was an error', err);
+    //     });
+    // googleTrends.interestOverTime({keyword: "Java"}, function(err, results){
+    //     if(err) console.error('there was an error!', err);
+    //     else console.log('my sweet sweet results', results);
+    // });
+
+    function getTrend(req, res) {
+        var cid = req.params.cid;
+        model
+            .findCourseById(cid)
+            .then(
+                function (course) {
+                    if(course) {
+                        console.log("course in service: " + course._id);
+                        var keyword = course.keyword;
+                        googleTrends.interestOverTime({keyword: keyword})
+                            .then(function(results){
+                                console.log('These results are awesome', results);
+                                res.json(results);
+                            })
+                            .catch(function(err){
+                                console.error('Oh no there was an error', err);
+                            });
+
+                    } else {
+                        course = null;
+                        res.send(course);
+                    }
+                },
+                function (error) {
+                    res.sendStatus(400).send(error);
+                }
+            );
+
+
+        // var keyword = course.keyword;
+        //
+        // googleTrends.interestOverTime({keyword: keyword})
+        //     .then(function(results){
+        //         console.log('These results are awesome', results);
+        //         res.json(results);
+        //     })
+        //     .catch(function(err){
+        //         console.error('Oh no there was an error', err);
+        //     });
+        // googleTrends.interestOverTime({keyword: keyword},
+        //     function(err, results){
+        //     if(err) console.error('there was an error!', err);
+        //     else console.log('my sweet sweet results', results);
+        // });
+    }
 
     /*API calls implementation*/
     function createCourse(req, res) {
