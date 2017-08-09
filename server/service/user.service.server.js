@@ -20,6 +20,7 @@ module.exports = function(app, models){
     app.delete('/api/user/:uid', deleteUser);
     app.get('/api/alluser', findAllUsers);
     app.post('/api/user', createUser);
+
     // google trends
     app.get('/api/trend/:uid', getTrend);
 
@@ -310,20 +311,4 @@ module.exports = function(app, models){
         }
 
     }
-
-    // function addAdmin(req, res) {
-    //     var uid = req.params.uid;
-    //     if(uid) {
-    //         model
-    //             .addAdmin(uid)
-    //             .then(
-    //                 function (user){
-    //                     res.json(user)
-    //                 },
-    //                 function (error){
-    //                     res.sendStatus(400).send(error);
-    //                 }
-    //             )
-    //     }
-    // }
 };
