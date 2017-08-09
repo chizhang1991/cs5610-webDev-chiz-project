@@ -38,25 +38,21 @@
             });
 
 
-        // chart
+        // draw chart, using google trends json
         UserService
             .getTrend(vm.user)
             .then(function (trend) {
                 vm.trend = trend;
-                console.log("1");
             })
             .then(function () {
-                console.log(2);
                 vm.trendParser = JSON.parse(vm.trend).default.timelineData;
                 vm.table = [];
                 vm.table.push(["Year", "Value"]);
                 for (i = 0; i < vm.trendParser.length; i++) {
                     vm.table.push([String(vm.trendParser[i].formattedTime), parseInt(vm.trendParser[i].value)]);
                 }
-                console.log(vm.table);
             })
             .then(function () {
-                console.log(3);
 
                 google.charts.load('current', {'packages':['corechart']});
                 google.charts.setOnLoadCallback(drawChart);

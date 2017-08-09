@@ -50,7 +50,6 @@ module.exports = function(app, models){
 
     function googleStrategy(token, refreshToken, profile, done) {
 
-        // console.log("profile: " + profile);
 
         model
             .findUserByGoogleId(profile.id)
@@ -157,7 +156,6 @@ module.exports = function(app, models){
     function register(req, res) {
         var user = req.body;
         user.password = bcrypt.hashSync(user.password);
-        // console.log(user);
         model
             .createUser(user)
             .then(
@@ -179,11 +177,10 @@ module.exports = function(app, models){
             .then(
                 function (user) {
                     if (user) {
-                        // console.log("course in service: " + course._id);
                         var keyword = user.job;
                         googleTrends.interestOverTime({keyword: keyword})
                             .then(function (results) {
-                                console.log('These results are awesome');
+                                // console.log('These results are awesome');
                                 res.json(results);
                             })
                             .catch(function (err) {
