@@ -1,0 +1,10 @@
+Database : using mongo db and mongoose
+
+Front-end: using bootstrap, font-awesome, elegant-icons-font
+
+Front-end routing: using angular-route
+
+Third party API:
+    google trends api
+    chart.js
+    google maps api
