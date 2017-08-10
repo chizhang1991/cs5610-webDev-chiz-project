@@ -30,6 +30,9 @@ Some basic information and job recommendations shows in this page.
 1.7 admin page
 This page can only be seen by admin users. Admin users can manage other users through this page.
 
+1.8 mobile view
+This web app also works well on small screens such as mobile or tablets.By pressing the title on the left up corner, user will be navigated to homepage, on home page user can find the hyperlinks to go to every page on the first line.
+
 2. provide login credentials (username and password)
 admin user
     - username: admin
