@@ -1,181 +1,172 @@
-<section id="container" class="">
+ <!--header start-->
+ <nav class="header dark-bg navbar-fixed-top navbar">
+     <div class="toggle-nav">
+         <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom">
+             <i class="icon_menu"></i>
+         </div>
+     </div>
 
-    <!--header start-->
-    <header class="header dark-bg">
-        <div class="toggle-nav">
-            <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom">
-                <i ng-click="toggleLeft()" class="icon_menu"></i>
-            </div>
-        </div>
+     <!--logo start-->
+     <a href="#!/homepage" class="logo">Job <span class="lite">Hunter</span></a>
+     <!--logo end-->
 
-        <!--logo start-->
-        <a href="#!/homepage" class="logo">Job <span class="lite">Hunter</span></a>
-        <!--logo end-->
-
-        <div class="top-nav notification-row">
-            <!-- notificatoin dropdown start-->
-            <ul class="nav pull-right top-menu">
-                <li>
-                    <a>
-                        <i class="icon_profile"></i>
-                        <span class="username">Hello, {{model.user.username}}</span>
-                    </a>
-                </li>
-                <!-- user login dropdown end -->
-            </ul>
-            <!-- notificatoin dropdown end-->
-        </div>
-    </header>
-
-    <!--sidebar start-->
-    <aside>
-        <div id="sidebar"  class="nav-collapse">
-            <!-- sidebar menu start-->
-            <ul class="sidebar-menu">
-                <li><a href="#!/homepage">
-                    <i class="icon_house_alt"></i>
-                    <span>Homepage</span>
-                </a></li>
-                <li><a ng-if="model.user.roles.indexOf('ADMIN')>-1"
-                       href="#!/admin">
-                    <i class="icon_group"></i>
-                    <span>Admin Page</span>
-                    <!--<span class="menu-arrow arrow_carrot-right"></span>-->
-                </a></li>
-                <li><a href="#!/course">
-                    <i class="icon_desktop"></i>
-                    <span>Course</span>
-                    <!--<span class="menu-arrow arrow_carrot-right"></span>-->
-                </a></li>
-                <li><a href="#!/job">
-                    <i class="icon_genius"></i>
-                    <span>Jobs</span>
-                </a></li>
+     <div class="top-nav notification-row">
+         <!-- notificatoin dropdown start-->
+         <ul class="nav pull-right top-menu">
+             <li>
+                 <a>
+                     <i class="icon_profile"></i>
+                     <span class="username">Hello, {{model.user.username}}</span>
+                 </a>
+             </li>
+             <!-- user login dropdown end -->
+         </ul>
+         <!-- notificatoin dropdown end-->
+     </div>
+ </nav>
 
 
-                <li><a href="#!/profile">
-                    <i class="icon_id"></i>
-                    <span>Profile</span>
+ <div class="row container-fluid">
+     <!--sidebar start-->
+     <div class="sidebar-style col-sm-2 hidden-xs">
+         <!-- sidebar menu start-->
+         <ul class="sidebar-menu">
+             <li><a href="#!/homepage">
+                 <i class="icon_house_alt"></i>
+                 <span>Homepage</span>
+             </a></li>
+             <li><a ng-if="model.user.roles.indexOf('ADMIN')>-1"
+                    href="#!/admin">
+                 <i class="icon_group"></i>
+                 <span>Admin Page</span>
+                 <!--<span class="menu-arrow arrow_carrot-right"></span>-->
+             </a></li>
+             <li><a href="#!/course">
+                 <i class="icon_desktop"></i>
+                 <span>Course</span>
+                 <!--<span class="menu-arrow arrow_carrot-right"></span>-->
+             </a></li>
+             <li><a href="#!/job">
+                 <i class="icon_genius"></i>
+                 <span>Jobs</span>
+             </a></li>
 
-                </a></li>
+             <li><a href="#!/profile">
+                 <i class="icon_id"></i>
+                 <span>Profile</span>
+
+             </a></li>
 
 
 
-                <li><a>
-                    <i class="icon_lock_alt"></i>
-                    <span ng-click="model.logout()">Logout</span>
-                    <!--<span class="menu-arrow arrow_carrot-right"></span>-->
-                </a></li>
+             <li><a>
+                 <i class="icon_lock_alt"></i>
+                 <span ng-click="model.logout()">Logout</span>
+                 <!--<span class="menu-arrow arrow_carrot-right"></span>-->
+             </a></li>
 
-            </ul>
-            <!-- sidebar menu end-->
-        </div>
-    </aside>
+         </ul>
+         <!-- sidebar menu end-->
+     </div>
     <!--sidebar end-->
 
-    <!--main content start-->
-    <section id="main-content">
-        <section class="wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3 class="page-header"><i class="icon_desktop"></i> Courses</h3>
-                </div>
-            </div>
-            <!-- page start-->
-            <div class="container-fluid">
-                <ol class="breadcrumb">
-                    <div class="fa fa-thumbs-o-up"></div>
-                    Edit Course
-                </ol>
+     <div class="content-style col-xs-12 col-sm-10 pull-right">
+         <div class="row">
+             <div class="col-lg-12">
+                 <h3 class="page-header"><i class="icon_desktop"></i> Courses</h3>
+             </div>
+         </div>
+         <!-- page start-->
+         <div class="container-fluid">
+             <ol class="breadcrumb">
+                 <div class="fa fa-thumbs-o-up"></div>
+                 Edit Course
+             </ol>
 
-                <div class="container-fluid">
-                    <div ng-show="model.error" class="alert alert-danger" role="alert">{{model.error}}</div>
-                    <div ng-show="model.updated" class="alert alert-success" role="alert">{{model.updated}}</div>
-                    <form>
-                        <label for="courseName">Course Name</label>
-                        <input type="text"
-                               class="form-control"
-                               id="courseName"
-                               placeholder="Course Name"
-                               ng-model="model.course.name"
-                               required>
+             <div class="container-fluid">
+                 <div ng-show="model.error" class="alert alert-danger" role="alert">{{model.error}}</div>
+                 <div ng-show="model.updated" class="alert alert-success" role="alert">{{model.updated}}</div>
+                 <form>
+                     <label for="courseName">Course Name</label>
+                     <input type="text"
+                            class="form-control"
+                            id="courseName"
+                            placeholder="Course Name"
+                            ng-model="model.course.name"
+                            required>
 
-                        <label for="courseNumber">Course Number</label>
-                        <input type="text"
-                               class="form-control"
-                               id="courseNumber"
-                               placeholder="Course Number"
-                               ng-model="model.course.number"
-                               required>
+                     <label for="courseNumber">Course Number</label>
+                     <input type="text"
+                            class="form-control"
+                            id="courseNumber"
+                            placeholder="Course Number"
+                            ng-model="model.course.number"
+                            required>
 
-                        <label for="description">Description</label>
-                        <textarea class="form-control"
-                                  id="description"
-                                  rows="3"
-                                  placeholder="Description"
-                                  ng-model="model.course.description">
+                     <label for="description">Description</label>
+                     <textarea class="form-control"
+                               id="description"
+                               rows="3"
+                               placeholder="Description"
+                               ng-model="model.course.description">
                         </textarea>
 
-                        <label for="keywords">Keywords</label>
-                        <input type="text"
-                               class="form-control"
-                               id="keywords"
-                               placeholder="Course Keywords"
-                               ng-model="model.course.keyword"
-                               required>
+                     <label for="keywords">Keywords</label>
+                     <input type="text"
+                            class="form-control"
+                            id="keywords"
+                            placeholder="Course Keywords"
+                            ng-model="model.course.keyword"
+                            required>
 
-                        <label for="assignment">Assignments</label>
-                        <text-angular
-                                ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+                     <label for="assignment">Assignments</label>
+                     <text-angular
+                             ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
                                 ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
                                 ['indent','outdent'],['html']]"
-                                ng-model="model.course.assignment"
-                                type="text"
-                                id="assignment"
-                                placeholder="Assignment"
-                                ta-text-editor-class="form-control myform1-height"
-                                ta-html-editor-class="form-control myform1-height">
-                        </text-angular>
+                             ng-model="model.course.assignment"
+                             type="text"
+                             id="assignment"
+                             placeholder="Assignment"
+                             ta-text-editor-class="form-control myform1-height"
+                             ta-html-editor-class="form-control myform1-height">
+                     </text-angular>
 
-                        <label for="project">Project</label>
-                        <text-angular
-                                ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
+                     <label for="project">Project</label>
+                     <text-angular
+                             ta-toolbar="[['h1','h2','h3'],['bold','italics','underline','strikeThrough'],
                                 ['ul','ol'],['justifyLeft','justifyCenter','justifyRight','justifyFull'],
                                 ['indent','outdent'],['html']]"
-                                ng-model="model.course.project"
-                                type="text"
-                                id="project"
-                                placeholder="Project"
-                                ta-text-editor-class="form-control myform1-height"
-                                ta-html-editor-class="form-control myform1-height">
-                        </text-angular>
+                             ng-model="model.course.project"
+                             type="text"
+                             id="project"
+                             placeholder="Project"
+                             ta-text-editor-class="form-control myform1-height"
+                             ta-html-editor-class="form-control myform1-height">
+                     </text-angular>
 
-                    </form>
+                 </form>
 
-                    <br/>
-                    <br/>
-                    <a ng-click="model.updateCourse(model.course)" class="btn btn-primary btn-block">
-                        Save Change
-                    </a>
-                    <a ng-click="model.deleteCourse(model.course)" class="btn btn-danger btn-block">
-                        Delete
-                    </a>
-                    <a href="#!/course"
-                       class="btn btn-danger btn-block">
-                        Cancel
-                    </a>
-                </div>
-            </div>
+                 <br/>
+                 <br/>
+                 <a ng-click="model.updateCourse(model.course)" class="btn btn-primary btn-block">
+                     Save Change
+                 </a>
+                 <a ng-click="model.deleteCourse(model.course)" class="btn btn-danger btn-block">
+                     Delete
+                 </a>
+                 <a href="#!/course"
+                    class="btn btn-danger btn-block">
+                     Cancel
+                 </a>
+             </div>
+         </div>
 
+         <div class="container-fluid text-right">
+             <div class="credits">
+                 CS5610 project by Chi Zhang
+             </div>
+         </div>
+     </div>
 
-            </div>
-            <!-- page end-->
-        </section>
-    </section>
-    <!--main content end-->
-    <div class="container-fluid text-right">
-        <div class="credits">
-            CS5610 project by Chi Zhang
-        </div>
-    </div>
-</section>
+ </div>
