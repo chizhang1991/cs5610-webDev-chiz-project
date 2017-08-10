@@ -513,7 +513,7 @@ table tr th { color: #688a7e;}
 /*sidebar navigation*/
 
 .sidebar-style {
-    width: 180px;
+    /*width: 180px;*/
 
     height: 100%;
 
@@ -1060,6 +1060,13 @@ ul.sidebar-menu li.active a i {
 
 }
 
+.content-style {
+    display: inline-block;
+
+    margin-top: 60px;
+
+    padding: 15px;
+}
 
 
 a.logo {
