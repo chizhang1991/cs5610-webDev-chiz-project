@@ -28,9 +28,16 @@
             vm.jobs = jobs;
         }
 
-        // function trustThisContent(html) {
-        //     // diligence to scrub unsafe content
-        //     return $sce.trustAsHtml(html);
+        // function myMap() {
+        //     var mapCanvas = document.getElementById("map");
+        //     var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+        //     var mapOptions = {center: myCenter, zoom: 5};
+        //     var map = new google.maps.Map(mapCanvas,mapOptions);
+        //     var marker = new google.maps.Marker({
+        //         position: myCenter,
+        //         animation: google.maps.Animation.BOUNCE
+        //     });
+        //     marker.setMap(map);
         // }
     }
 
