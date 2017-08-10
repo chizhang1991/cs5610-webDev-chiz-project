@@ -1,129 +1,117 @@
-<section id="container" class="">
-
-    <!--header start-->
-    <header class="header dark-bg">
-        <div class="toggle-nav">
-            <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom">
-                <i ng-click="toggleLeft()" class="icon_menu"></i>
-            </div>
-        </div>
-
-        <!--logo start-->
-        <a href="#!/homepage" class="logo">Job <span class="lite">Hunter</span></a>
-        <!--logo end-->
-
-        <div class="top-nav notification-row">
-            <!-- notificatoin dropdown start-->
-            <ul class="nav pull-right top-menu">
-                <li>
-                    <a>
-                        <i class="icon_profile"></i>
-                        <span class="username">Hello, {{model.user.username}}</span>
-                    </a>
-                </li>
-                <!-- user login dropdown end -->
-            </ul>
-            <!-- notificatoin dropdown end-->
-        </div>
-    </header>
-
-    <!--sidebar start-->
-    <aside>
-        <div id="sidebar"  class="nav-collapse">
-            <!-- sidebar menu start-->
-            <ul class="sidebar-menu">
-                <li><a href="#!/homepage">
-                    <i class="icon_house_alt"></i>
-                    <span>Homepage</span>
-                </a></li>
-                <li><a ng-if="model.user.roles.indexOf('ADMIN')>-1"
-                       href="#!/admin">
-                    <i class="icon_group"></i>
-                    <span>Admin Page</span>
-                    <!--<span class="menu-arrow arrow_carrot-right"></span>-->
-                </a></li>
-                <li><a href="#!/course">
-                    <i class="icon_desktop"></i>
-                    <span>Course</span>
-                    <!--<span class="menu-arrow arrow_carrot-right"></span>-->
-                </a></li>
-                <li><a href="#!/job">
-                    <i class="icon_genius"></i>
-                    <span>Jobs</span>
-                </a></li>
-
-                <!--<li><a>-->
-                    <!--<i class="icon_contacts"></i>-->
-                    <!--<span>Friends</span>-->
-                    <!--&lt;!&ndash;<span class="menu-arrow arrow_carrot-right"></span>&ndash;&gt;-->
-                <!--</a></li>-->
-
-                <li><a href="#!/profile">
-                    <i class="icon_id"></i>
-                    <span>Profile</span>
-
-                </a></li>
-
-
-
-                <li><a>
-                    <i class="icon_lock_alt"></i>
-                    <span ng-click="model.logout()">Logout</span>
-                    <!--<span class="menu-arrow arrow_carrot-right"></span>-->
-                </a></li>
-
-            </ul>
-            <!-- sidebar menu end-->
-        </div>
-    </aside>
-    <!--sidebar end-->
-
-    <!--main content start-->
-    <section id="main-content">
-        <section class="wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h3 class="page-header"><i class="icon_desktop"></i> Courses</h3>
-                </div>
-            </div>
-            <!-- page start-->
-            <div class="container-fluid">
-                <ol class="breadcrumb">
-                    <div class="fa fa-thumbs-o-up"></div>
-                    Course List
-                </ol>
-
-                <a href="#!/course/new" class="btn btn-primary btn-block">
-                    Add a new course
-                </a>
-                <br/>
-                <div ng-repeat="course in model.courses">
-                    <ol class="breadcrumb" href="#!/">
-                        <a href="#!/course/{{course._id}}">
-                            <span class="glyphicon glyphicon-cog pull-right"></span>
-                        </a>
-                        <i class="icon_menu-circle_alt2"></i>
-                        {{course.number}} {{course.name}}
-                    </ol>
-                    <p>{{course.description}}</p>
-                    <h4>trends</h4>
-                    <a ng-click="model.getTrend(course)">{{course.keyword}}</a>
-
-                    <h4>Assignment</h4>
-                    <div ng-bind-html="model.trustThisContent(course.assignment)"></div>
-                    <h4>Project</h4>
-                    <div ng-bind-html="model.trustThisContent(course.project)"></div>
-                </div>
-
-
-            </div>
-            <!-- page end-->
-        </section>
-    </section>
-    <!--main content end-->
-    <div class="container-fluid text-right">
-        <div class="credits">
-            CS5610 project by Chi Zhang
+<!--header start-->
+<nav class="header dark-bg navbar-fixed-top navbar">
+    <div class="toggle-nav">
+        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom">
+            <i class="icon_menu"></i>
         </div>
     </div>
-</section>
+
+    <!--logo start-->
+    <a href="#!/homepage" class="logo">Job <span class="lite">Hunter</span></a>
+    <!--logo end-->
+
+    <div class="top-nav notification-row">
+        <!-- notificatoin dropdown start-->
+        <ul class="nav pull-right top-menu">
+            <li>
+                <a>
+                    <i class="icon_profile"></i>
+                    <span class="username">Hello, {{model.user.username}}</span>
+                </a>
+            </li>
+            <!-- user login dropdown end -->
+        </ul>
+        <!-- notificatoin dropdown end-->
+    </div>
+</nav>
+
+
+<div class="row container-fluid">
+    <!--sidebar start-->
+    <div class="sidebar-style col-sm-2 hidden-xs">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu">
+            <li><a href="#!/homepage">
+                <i class="icon_house_alt"></i>
+                <span>Homepage</span>
+            </a></li>
+            <li><a ng-if="model.user.roles.indexOf('ADMIN')>-1"
+                   href="#!/admin">
+                <i class="icon_group"></i>
+                <span>Admin Page</span>
+                <!--<span class="menu-arrow arrow_carrot-right"></span>-->
+            </a></li>
+            <li><a href="#!/course">
+                <i class="icon_desktop"></i>
+                <span>Course</span>
+                <!--<span class="menu-arrow arrow_carrot-right"></span>-->
+            </a></li>
+            <li><a href="#!/job">
+                <i class="icon_genius"></i>
+                <span>Jobs</span>
+            </a></li>
+
+            <li><a href="#!/profile">
+                <i class="icon_id"></i>
+                <span>Profile</span>
+
+            </a></li>
+
+
+
+            <li><a>
+                <i class="icon_lock_alt"></i>
+                <span ng-click="model.logout()">Logout</span>
+                <!--<span class="menu-arrow arrow_carrot-right"></span>-->
+            </a></li>
+
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+    <!--sidebar end-->
+
+    <div class="content-style col-xs-12 col-sm-10 pull-right">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"><i class="icon_desktop"></i> Courses</h3>
+            </div>
+        </div>
+        <!-- page start-->
+        <div class="container-fluid">
+            <ol class="breadcrumb">
+                <div class="fa fa-thumbs-o-up"></div>
+                Course List
+            </ol>
+
+            <a href="#!/course/new" class="btn btn-primary btn-block">
+                Add a new course
+            </a>
+            <br/>
+            <div ng-repeat="course in model.courses">
+                <ol class="breadcrumb" href="#!/">
+                    <a href="#!/course/{{course._id}}">
+                        <span class="glyphicon glyphicon-cog pull-right"></span>
+                    </a>
+                    <i class="icon_menu-circle_alt2"></i>
+                    {{course.number}} {{course.name}}
+                </ol>
+                <p>{{course.description}}</p>
+                <h4>trends</h4>
+                <a ng-click="model.getTrend(course)">{{course.keyword}}</a>
+
+                <h4>Assignment</h4>
+                <div ng-bind-html="model.trustThisContent(course.assignment)"></div>
+                <h4>Project</h4>
+                <div ng-bind-html="model.trustThisContent(course.project)"></div>
+            </div>
+
+
+        </div>
+
+        <div class="container-fluid text-right">
+            <div class="credits">
+                CS5610 project by Chi Zhang
+            </div>
+        </div>
+    </div>
+</div>
