@@ -1,5 +1,5 @@
 1. explain how to use your app, give a simple navigation
-This app is a job hunter application designed for students.
+This app is a job hunter application designed for students. The purpose of this web app is help student analyze whether they have a good career plan.
 Students can record their courses, interested jobs and their profile and personal preference. This app can provide advices on their job preferences.
 A welcome message displays on the right corner of every page, so users can check their login state.
 
