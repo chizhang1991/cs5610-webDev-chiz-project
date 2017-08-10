@@ -38,12 +38,10 @@
                    href="#!/admin">
                 <i class="icon_group"></i>
                 <span>Admin Page</span>
-                <!--<span class="menu-arrow arrow_carrot-right"></span>-->
             </a></li>
             <li><a href="#!/course">
                 <i class="icon_desktop"></i>
                 <span>Course</span>
-                <!--<span class="menu-arrow arrow_carrot-right"></span>-->
             </a></li>
             <li><a href="#!/job">
                 <i class="icon_genius"></i>
@@ -56,12 +54,9 @@
 
             </a></li>
 
-
-
             <li><a>
                 <i class="icon_lock_alt"></i>
                 <span ng-click="model.logout()">Logout</span>
-                <!--<span class="menu-arrow arrow_carrot-right"></span>-->
             </a></li>
 
         </ul>
@@ -73,6 +68,26 @@
         <div class="row">
             <div class="container-fluid">
                 <h3 class="page-header"><i class="fa fa-laptop"></i> Homepage</h3>
+
+                <ol class="breadcrumb">
+                    <i class="icon_link"></i>
+                    <a href="#!/profile">
+                        Profile
+                        <i class="arrow_carrot-right"></i>
+                    </a>
+                    <a href="#!/course">
+                        Course
+                        <i class="arrow_carrot-right"></i>
+                    </a>
+                    <a href="#!/job">
+                        Job
+                        <i class="arrow_carrot-right"></i>
+                    </a>
+                    <a ng-if="model.user.roles.indexOf('ADMIN')>-1"
+                       href="#!/admin">
+                        Admin
+                    </a>
+                </ol>
 
                 <ol class="breadcrumb">
                     <a href="#!/profile">

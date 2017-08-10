@@ -185,7 +185,7 @@ module.exports = function(app, models){
                                 res.json(results);
                             })
                             .catch(function (err) {
-                                console.error('Oh no there was an error', err);
+                                console.error('Oh no there was an error, please add or change a job preference in profile page', err);
                             });
 
                     } else {
